@@ -1,0 +1,445 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+<title>CV. Reza Batubara</title>
+<script src='http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script> 
+<link href="http://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.1/normalize.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.12.0/css/all.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.4.1/flatly/bootstrap.min.css">
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+    <script src="dropkick.js"></script>
+     <link rel="stylesheet" href="dropkick.css">
+	<!-- Animate.css -->
+	<link rel="stylesheet" href="css/animate.css">
+	<!-- Icomoon Icon Fonts-->
+	<link rel="stylesheet" href="css/icomoon.css">
+	<!-- Bootstrap  -->
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<!-- Superfish -->
+	<link rel="stylesheet" href="css/superfish.css">
+
+	<link rel="stylesheet" href="css/style.css">
+
+
+	<!-- Modernizr JS -->
+	<script src="js/modernizr-2.6.2.min.js"></script>
+
+<style>
+* {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  overflow: hidden;
+}
+
+.page {
+  height: 100%;
+  background-color: #584E4A;
+}
+
+.content {
+  height: 200%;
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  -webkit-transition: -webkit-transform 0.7s cubic-bezier(1, 0.005, 0.24, 1);
+  transition: transform 0.7s cubic-bezier(1, 0.005, 0.24, 1);
+  background-color: white;
+}
+
+.content_inner {
+  height: 50%;
+  overflow-y: auto;
+  padding: 50px 20%;
+  width: 100%
+  background-color: black;
+}
+
+/* basically all styling from now on */
+
+
+.menu_toggle {
+  z-index: 900;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: block;
+  cursor: pointer;
+  width: 100px;
+  height: 80px;
+  background-color: #F37272;
+  border-bottom-right-radius: 100%;
+}
+
+.menu_toggle:active i { opacity: 0.8; }
+
+.menu_toggle i { color: #f0f0f0; }
+
+.menu_toggle .menu_open,
+.menu_toggle .menu_close {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -15px;
+  margin-left: -12px;
+  -webkit-transition: -webkit-transform 0.7s cubic-bezier(1, 0.005, 0.24, 1);
+  transition: transform 0.7s cubic-bezier(1, 0.005, 0.24, 1);
+}
+
+.menu_toggle .menu_open {
+  -webkit-transform-origin: -100px -100px;
+  -ms-transform-origin: -100px -100px;
+  transform-origin: -100px -100px;
+}
+
+.menu_toggle .menu_close {
+  -webkit-transform: rotate(20deg);
+  -ms-transform: rotate(20deg);
+  transform: rotate(20deg);
+  -webkit-transform-origin: -100px -160px;
+  -ms-transform-origin: -100px -160px;
+  transform-origin: -100px -160px;
+}
+
+.menu_items {
+  position: fixed;
+  bottom: 0;
+  left: 50px;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu_items li {
+  height: 60px;
+  margin-bottom: 30px;
+  -webkit-transform: translateX(-300px);
+  -ms-transform: translateX(-300px);
+  transform: translateX(-300px);
+  -webkit-transition: -webkit-transform 0.7s 0s cubic-bezier(1, 0.005, 0.24, 1);
+  transition: transform 0.7s 0s cubic-bezier(1, 0.005, 0.24, 1);
+}
+
+.menu_items li:nth-child(2) { margin-left: 40px; }
+
+.menu_items li:nth-child(3) { margin-left: 80px; }
+
+.menu_items a {
+  display: block;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #a3a3a3;
+  -webkit-transition: color .2s;
+  transition: color .2s;
+}
+
+.menu_items a .icon {
+  position: relative;
+  display: inline-block;
+  margin-right: 25px;
+  color: #f0f0f0;
+}
+
+.menu_items a .icon:after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  content: '';
+  display: block;
+  width: 60px;
+  height: 60px;
+  margin-left: -33px;
+  margin-top: -32px;
+  border-radius: 100%;
+  border: 2px solid #f0f0f0;
+  -webkit-transition: border-color .2s;
+  transition: border-color .2s;
+}
+
+.menu_items a:hover { color: #f0f0f0; }
+
+.menu_items a:hover .icon:after { border-color: #F37272; }
+
+.menu_items a:active .icon { color: #F37272; }
+
+/* Let's open up the menu */
+
+
+.menu_effect { /*.content_inner {
+    height: 100%;
+  }*/ }
+
+.menu_effect .content {
+  -webkit-transform: rotate(-30deg);
+  -ms-transform: rotate(-30deg);
+  transform: rotate(-30deg);
+}
+
+.menu_effect .menu_open {
+  -webkit-transform: rotate(-20deg);
+  -ms-transform: rotate(-20deg);
+  transform: rotate(-20deg);
+}
+
+.menu_effect .menu_close {
+  -webkit-transform: rotate(0);
+  -ms-transform: rotate(0);
+  transform: rotate(0);
+}
+
+.menu_effect .menu_items li {
+  -webkit-transform: translateX(0);
+  -ms-transform: translateX(0);
+  transform: translateX(0);
+  -webkit-transition: -webkit-transform 0.35s 0.45s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: transform 0.35s 0.45s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.menu_effect .menu_items li:nth-child(2) {
+  -webkit-transition-delay: .47s;
+  transition-delay: .47s;
+}
+
+.menu_effect .menu_items li:nth-child(3) {
+  -webkit-transition-delay: .48s;
+  transition-delay: .48s;
+}
+
+h1 {
+  padding-bottom: 15px;
+  border-bottom: 1px solid #ddd;
+}
+
+body { color: #584E4A; }
+</style>
+</head>
+
+<body>
+
+<div class="page"> <span class="menu_toggle"> <i class="menu_open fa fa-bars fa-lg"></i> <i class="menu_close fa fa-times fa-lg"></i> </span>
+  <ul class="menu_items" style="">
+    <li><a href="#" id="home" class="tgl"><i class="icon fas fa-home-lg-alt fa-2x"></i> Home </a></li>
+    <li><a href="#" id="payment" class="tgl"><i class="icon fal fa-money-check-alt fa-2x"></i> Kasus </a></li>
+    <li><a href="#" id="about" class="tgl"><i class="icon fa fa-heart fa-2x"></i> Syarat </a></li>
+    <li><a href="#" id="about" class="tgl"><i class="icon fa fa-heart fa-2x"></i> kontak </a></li>
+
+  
+  </ul>
+  <main class="content">
+
+	<div class="fh5co-hero" id="utama">
+			<div class="fh5co-overlay"></div>
+			<div class="fh5co-cover text-center" data-stellar-background-ratio="0.5" style="background-image: url(background.jpeg);background-repeat: no-repeat; background-attachment: fixed;
+  background-size: 100% 100%; background-color: transparent;">
+				<div class="desc animate-box">
+					<!-- <h2 style="color: aqua;">CV. Reza Batubara</h2> -->
+					<!-- <span>Lovely Crafted by <a href="http://frehtml5.co/" target="_blank" class="fh5co-site-name">FREEHTML5.co</a></span> -->
+			
+				</div>
+			</div>
+
+		</div>
+
+
+    <div class="content_inner d-none" id="homesection">
+      <h1>Cv.Reza Batubara</h1>
+
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel dolorem, ducimus laudantium, earum eos natus sint voluptatum dolores fuga quibusdam consectetur dicta. Laudantium enim inventore iusto ducimus est velit aperiam tempora quibusdam id dolore natus perferendis, debitis distinctio optio repellendus, repellat molestias delectus harum eius, reiciendis dicta ipsum architecto! Eligendi expedita in beatae, placeat unde voluptatibus voluptates consectetur explicabo laudantium, officiis ad nihil. Beatae similique voluptate sequi voluptatem delectus iure in omnis, fuga ipsam nulla ipsum architecto, iste debitis nisi labore quisquam odio accusantium corporis sint perspiciatis. Excepturi earum nobis soluta, doloremque nihil dolorum illum quaerat magnam nemo non sed!</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel dolorem, ducimus laudantium, earum eos natus sint voluptatum dolores fuga quibusdam consectetur dicta. Laudantium enim inventore iusto ducimus est velit aperiam tempora quibusdam id dolore natus perferendis, debitis distinctio optio repellendus, repellat molestias delectus harum eius, reiciendis dicta ipsum architecto! Eligendi expedita in beatae, placeat unde voluptatibus voluptates consectetur explicabo laudantium, officiis ad nihil. Beatae similique voluptate sequi voluptatem delectus iure in omnis, fuga ipsam nulla ipsum architecto, iste debitis nisi labore quisquam odio accusantium corporis sint perspiciatis. Excepturi earum nobis soluta, doloremque nihil dolorum illum quaerat magnam nemo non sed!</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel dolorem, ducimus laudantium, earum eos natus sint voluptatum dolores fuga quibusdam consectetur dicta. Laudantium enim inventore iusto ducimus est velit aperiam tempora quibusdam id dolore natus perferendis, debitis distinctio optio repellendus, repellat molestias delectus harum eius, reiciendis dicta ipsum architecto! Eligendi expedita in beatae, placeat unde voluptatibus voluptates consectetur explicabo laudantium, officiis ad nihil. Beatae similique voluptate sequi voluptatem delectus iure in omnis, fuga ipsam nulla ipsum architecto, iste debitis nisi labore quisquam odio accusantium corporis sint perspiciatis. Excepturi earum nobis soluta, doloremque nihil dolorum illum quaerat magnam nemo non sed!</p>
+    </div>
+
+        <div class="content_inner d-none" style="" id="paymentsection">
+<form class="submit-student-form" action="payment.php" method="post">
+      <h1>Payment & Case</h1>
+
+<div class="form-group row" >
+    <div class="col-sm-3">
+     <label style=""> Name </label> 
+    </div>
+    <div class="col-sm-9">
+      <input class="form-control "  type="email" name="email" aria-label="" aria-describedby="basic-addon1" id="Email" style="" placeholder="Your Name/Nama Kamu" required> 
+
+    </div>
+</div>
+
+      <div class="form-group row"  >
+  
+   <div class="col-sm-3">
+      <label  style=""><i class="fad fa-file-alt" style="font-size: 30px;"></i>  Case / kasus </label> 
+    </div>
+    <div class="col-sm-9">
+        <select id="normal_select" type="text" name="first_name" required>
+          <option disabled selected class="hidden-option">Choose One /Pilih 1 </option>
+          <option value="AL">Perpanjangan STNK</option>
+          <option value="AK">BPKB Hilang</option>
+          <option value="AZ">Balik Nama</option>
+          <option value="AR">Duplikat STNK</option>
+          <option value="CA">Kir</option>
+          <option value="CO">Ganti STNK / 5 years</option>
+
+        </select>
+    </div>
+  </div>
+
+  <div class="form-group row" >
+    <div class="col-sm-3">
+     <label style=""> E-mail </label> 
+    </div>
+    <div class="col-sm-9">
+      <input class="form-control "  type="email" name="email" aria-label="" aria-describedby="basic-addon1" id="Email" style="" placeholder="user@example.com" required> 
+
+    </div>
+</div>
+
+  <div class="form-group row" >
+    <div class="col-sm-3">
+     <label style=""> Phone </label> 
+    </div>
+    <div class="col-sm-9">
+  
+       <input  class="form-control " type='tel' name="telephone" placeholder="xxxx-xxxx-xxxx"  aria-label="" aria-describedby="basic-addon1" id="Phone" style="" required>
+    </div>
+</div>
+
+ <div class="form-group row" >
+    <div class="col-sm-12">
+     <label style=""> Note / Catatan </label> 
+    </div>
+    <div class="col-sm-12">
+      <textarea id="Note"  name="note" placeholder="Write your Note here / tulis catatan disini " style="width: 100%;height: 140px;"></textarea>
+    </div>
+</div>
+
+  <button type="submit">Submit</button>
+</form>
+
+
+
+
+
+
+
+
+    </div>
+
+        <div class="content_inner d-none" id="aboutsection">
+      <h1>Cv.Reza Batubara</h1>
+
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel dolorem, ducimus laudantium, earum eos natus sint voluptatum dolores fuga quibusdam consectetur dicta. Laudantium enim inventore iusto ducimus est velit aperiam tempora quibusdam id dolore natus perferendis, debitis distinctio optio repellendus, repellat molestias delectus harum eius, reiciendis dicta ipsum architecto! Eligendi expedita in beatae, placeat unde voluptatibus voluptates consectetur explicabo laudantium, officiis ad nihil. Beatae similique voluptate sequi voluptatem delectus iure in omnis, fuga ipsam nulla ipsum architecto, iste debitis nisi labore quisquam odio accusantium corporis sint perspiciatis. Excepturi earum nobis soluta, doloremque nihil dolorum illum quaerat magnam nemo non sed!</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel dolorem, ducimus laudantium, earum eos natus sint voluptatum dolores fuga quibusdam consectetur dicta. Laudantium enim inventore iusto ducimus est velit aperiam tempora quibusdam id dolore natus perferendis, debitis distinctio optio repellendus, repellat molestias delectus harum eius, reiciendis dicta ipsum architecto! Eligendi expedita in beatae, placeat unde voluptatibus voluptates consectetur explicabo laudantium, officiis ad nihil. Beatae similique voluptate sequi voluptatem delectus iure in omnis, fuga ipsam nulla ipsum architecto, iste debitis nisi labore quisquam odio accusantium corporis sint perspiciatis. Excepturi earum nobis soluta, doloremque nihil dolorum illum quaerat magnam nemo non sed!</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel dolorem, ducimus laudantium, earum eos natus sint voluptatum dolores fuga quibusdam consectetur dicta. Laudantium enim inventore iusto ducimus est velit aperiam tempora quibusdam id dolore natus perferendis, debitis distinctio optio repellendus, repellat molestias delectus harum eius, reiciendis dicta ipsum architecto! Eligendi expedita in beatae, placeat unde voluptatibus voluptates consectetur explicabo laudantium, officiis ad nihil. Beatae similique voluptate sequi voluptatem delectus iure in omnis, fuga ipsam nulla ipsum architecto, iste debitis nisi labore quisquam odio accusantium corporis sint perspiciatis. Excepturi earum nobis soluta, doloremque nihil dolorum illum quaerat magnam nemo non sed!</p>
+    </div>
+  </main>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+var $page = $('.page');
+$('.menu_toggle').click(function () {
+    $page.toggleClass('menu_effect');
+});
+
+$('.tgl').click(function () {
+    $page.toggleClass('menu_effect');
+});
+$('.content').click(function () {
+    $page.removeClass('menu_effect');
+});
+
+$(document).ready(function(){
+
+  $("#home").click(function(){ console.log("bi1");
+    $("#paymentsection").fadeOut();
+    $("#aboutsection").fadeOut();
+      $("#homesection").fadeIn("slow");
+      $("#homesection").removeClass("d-none");
+      $("#utama").addClass("d-none");
+
+   /* $("#div2").fadeOut("slow");*/
+   
+  });
+
+  $("#payment").click(function(){console.log("bi2");
+    $("#homesection").fadeOut();
+    $("#aboutsection").fadeOut();
+      $("#paymentsection").fadeIn("slow");
+        $("#paymentsection").removeClass("d-none");
+$("#utama").addClass("d-none");
+   /* $("#div2").fadeOut("slow");*/
+   
+  });
+
+  $("#about").click(function(){console.log("bi3");
+    $("#homesection").fadeOut();
+    $("#paymentsection").fadeOut();
+      $("#aboutsection").fadeIn();
+        $("#aboutsection").removeClass("d-none");
+        $("#utama").addClass("d-none");
+   /* $("#div2").fadeOut("slow");*/
+   
+  });
+
+});
+
+
+
+  $(function() {
+         $( "#normal_select, #disabled, #opt_group, #multiple" ).dropkick({
+           mobile: true
+         });
+
+         $(".gist-container").each(function(index, gist) {
+           if (gist.offsetHeight > 160) {
+             $(".btn", gist).css('display', 'inline-block').on('click', function() {
+               var $gistWrapper = $(".gist-wrapper", gist);
+
+               if($gistWrapper.css('maxHeight') == "100%"){
+                 $gistWrapper.css('maxHeight', "");
+                 $gistWrapper.css('overflow', "");
+                 this.innerHTML = "Show Full Code";
+                 return false;
+               } else {
+                 $gistWrapper.css('maxHeight', "100%");
+                 $gistWrapper.css('overflow', "visible");
+                 this.innerHTML = "Hide Code";
+                 return false;
+               }
+             })
+           }
+         });
+
+       });
+</script>
+	<script src="js/jquery.min.js"></script>
+	<!-- jQuery Easing -->
+	<script src="js/jquery.easing.1.3.js"></script>
+	<!-- Bootstrap -->
+	<!-- Waypoints -->
+	<script src="js/jquery.waypoints.min.js"></script>
+	<!-- Stellar -->
+	<script src="js/jquery.stellar.min.js"></script>
+	<!-- Superfish -->
+	<script src="js/hoverIntent.js"></script>
+	<script src="js/superfish.js"></script>
+
+	<!-- Main JS -->
+	<script src="js/main.js"></script>
+
+  <script type="text/javascript" src="dropkick.js"></script></body>
+</body>
+</html>
